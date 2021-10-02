@@ -8,5 +8,12 @@ function getClinics(){
     .then(data = renderClinics(data))
 }
 
+function renderItems(data){
+    const clinics = data["data"];
+    clinics.forEach((clinic) =>{
+
+    })
+}
+
 // and then because we wrapped fetch in a function we need to call it down at the bottom
 getClinics()
