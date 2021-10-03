@@ -5,12 +5,17 @@ console.log('hello')
 // when info gets sent over the internet it gets turned into a string so we have to jsonify again
 // add an eventListener here to our form - we will listen for submit because we want our form to create something
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
-
+const nameInput = document.getElementById('item-name');
+const addressInput = document.getElementById('item-address');
+const nameCity = document.getElementById('item-city');
+const nameZip_code = document.getElementById('item-zip_code');
+const namePhone_number = document.getElementById('item-phone_number');
 
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event){
-    const clinicInfo = {   // creating an object here of clinic information containing what we want sent over interned to the database
+    const clinicInfo = {   // creating an object here of clinic information containing what we want sent over internet to the database
+        // how do i send these attributes through the internet?
         name:,
         address:,
         city:,
