@@ -16,7 +16,7 @@ console.log('hello')
         clinics.forEach((clinic) => {
             const li = document.createElement('li'); //every single iteration has its own scope
             // now I need to take this li and put some "stuff" in it
-            li.innerText = `${clinic["attributes"]["name"]} - ${clinic["attributes"]["address"]}`
+            li.innerText = `${clinic["attributes"]["name"]} - ${clinic["attributes"]["address"]} - ${clinic["attributes"]["city"]} - ${clinic["attributes"]["zip_code"]} - ${clinic["attributes"]["phone_number"]}`
             ul.appendChild(li)
         })
         // debugger
