@@ -1,15 +1,15 @@
-console.log('hello')
 
 // good practice to wrap our fetch request in a function
 // fetch request for clinics
 // when info gets sent over the internet it gets turned into a string so we have to jsonify again
 // add an eventListener here to our form - we will listen for submit because we want our form to create something
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
-const nameInput = document.getElementById('item-name');
-const addressInput = document.getElementById('item-address');
-const cityInput = document.getElementById('item-city');
-const zip_codeInput = document.getElementById('item-zip_code');
-const phone_numberInput = document.getElementById('item-phone_number');
+const form = document.getElementById('clinic-form')
+const nameInput = document.getElementById('clinic-name');
+const addressInput = document.getElementById('clinic-address');
+const cityInput = document.getElementById('clinic-city');
+const zip_codeInput = document.getElementById('clinic-zip_code');
+const phone_numberInput = document.getElementById('clinic-phone_number');
 
 form.addEventListener('submit', handleSubmit)
 
