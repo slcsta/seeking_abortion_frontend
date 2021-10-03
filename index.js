@@ -35,9 +35,11 @@ function handleSubmit(event){
             "Content-Type": "application/json",
             Accept: "application/json"
         },
-        body: 
+        body: JSON.stringify(clinicInfo)       // need to stringify this before sending it
     }
-    fetch('http://localhost:3000/clinics', ) //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
+    fetch('http://localhost:3000/clinics', configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
+    .then(response => response.json())
+    .then(json => {debugger})
 }
 
 function getClinics(){
