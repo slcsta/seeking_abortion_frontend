@@ -10,6 +10,13 @@ console.log('hello')
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event){
+    const clinicInfo = {   // creating an object here of clinic information containing what we want sent over interned to the database
+        name:,
+        address:,
+        city:,
+        zip_code:,
+        phone_number:
+    }
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
     event.preventDefault();
@@ -17,10 +24,15 @@ function handleSubmit(event){
     // b/c this is a more complicated fetch where we are sending params
     // i want to add a second arg that is an object containing the params that i want to send
     // i can do this by creating a variable for that object that holds those params
+    const configObject = {
+        method: 'POST', //tell what kind of request this is
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: 
+    }
     fetch('http://localhost:3000/clinics', ) //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
-
-    
-
 }
 
 function getClinics(){
