@@ -3,6 +3,18 @@ console.log('hello')
 // good practice to wrap our fetch request in a function
 // fetch request for clinics
 // when info gets sent over the internet it gets turned into a string so we have to jsonify again
+// add an eventListener here to our form - we will listen for submit because we want our form to create something
+// I do this listening for the submit by creating a function - here we will call it handleSubmit
+
+
+form.addEventListener('submit', handleSubmit)
+
+function handleSubmit(event){
+    // first thing I want to do here is prevent default b/c the form will automatically try to send a post request
+    // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
+
+}
+
 function getClinics(){
     fetch('http://localhost:3000/clinics')
     .then(response => response.json())
