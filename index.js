@@ -10,14 +10,14 @@ console.log('hello')
 
     function renderClinics(data) {
         const clinics = data["data"];
-        const container = document.getElementById('clinic-list');
+        const ul = document.getElementById('clinic-list');
 // now that I have my info and where my info will go, i want to make a list item ('li') for each clinic 
 // I do this by iterating through the data array to access each element (clinic)   
         clinics.forEach((clinic) => {
             const li = document.createElement('li'); //every single iteration has its own scope
             // now I need to take this li and put some "stuff" in it
             li.innerText = `${clinic["attributes"]["name"]} - ${clinic["attributes"]["address"]}`
-            debugger
+            ul.appendChild(li)
         })
         // debugger
     }
