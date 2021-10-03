@@ -7,20 +7,20 @@ console.log('hello')
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
 const nameInput = document.getElementById('item-name');
 const addressInput = document.getElementById('item-address');
-const nameCity = document.getElementById('item-city');
-const nameZip_code = document.getElementById('item-zip_code');
-const namePhone_number = document.getElementById('item-phone_number');
+const cityInput = document.getElementById('item-city');
+const zip_codeInput = document.getElementById('item-zip_code');
+const phone_numberInput = document.getElementById('item-phone_number');
 
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event){
     const clinicInfo = {   // creating an object here of clinic information containing what we want sent over internet to the database
         // how do i send these attributes through the internet?
-        name:,
-        address:,
-        city:,
-        zip_code:,
-        phone_number:
+        name: nameInput.value,
+        address: addressInput.value,
+        city: cityInput.value,
+        zip_code: zip_codeInput.value,
+        phone_number: phone_numberInput.value
     }
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
