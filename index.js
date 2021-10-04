@@ -79,6 +79,12 @@ function renderClinic(clinic) {
     `
     ul.appendChild(li)
     form.reset() //reset form to be cleared after something is entered
+    // going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
+    li.addEventListener('click', handleClick)
+}
+
+function handleClick(event){
+debugger
 }
 
 getClinics()
