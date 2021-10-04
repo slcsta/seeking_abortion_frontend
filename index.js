@@ -85,18 +85,24 @@ function renderClinic(clinic) {
 
 function handleClick(event){
     if(event.target.innerText === "Delete") {
+        const id = event.target.dataset.id
         event.target.parentElement.remove()
-        const id = e.target.dataset.id
         const configObject = {
-            method: 'DELETE', //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
+            method: 'DELETE' //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
         }
         fetch('http://localhost:3000/clinics' + `/${id}`, configObject)
         .then(response => response.json())
-        .then(json => {debugger})
+        .then(json => alert(json.message))
 
-    }
+    } else if(event.target.innerText === "Edit") {
+        event.target.innerText = "Save"
+        // change inner text of button to save
+        // have an edit form appear with values filled out
+        // change info on backend in db
+        // change info on the frontend (the DOM)
+        createEditFields(event.target)
 
-    else if(event.target.innerText === "Edit") {
+    } else if(event.target.innerText === "Save"){
 
     }
 }
