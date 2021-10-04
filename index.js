@@ -84,7 +84,14 @@ function renderClinic(clinic) {
 }
 
 function handleClick(event){
-debugger
+    if(event.target.innerText === "Delete") {
+        event.target.parentElement.remove()
+        
+    }
+
+    else if(event.target.innerText === "Edit") {
+
+    }
 }
 
 getClinics()
