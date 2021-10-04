@@ -5,6 +5,7 @@
 // add an eventListener here to our form - we will listen for submit because we want our form to create something
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
 const form = document.getElementById('clinic-form')
+const ul = document.getElementById('clinic-list');
 const nameInput = document.getElementById('clinic-name');
 const addressInput = document.getElementById('clinic-address');
 const cityInput = document.getElementById('clinic-city');
@@ -39,7 +40,7 @@ function handleSubmit(event){
     }
     fetch('http://localhost:3000/clinics', configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
     .then(response => response.json())
-    .then(json => {debugger})
+    .then(json => renderItem(json["data"]))
 }
 
 function getClinics(){
@@ -50,20 +51,30 @@ function getClinics(){
 
 function renderClinics(data) {
     const clinics = data["data"];
-    const ul = document.getElementById('clinic-list');
+  // look above - variable defined at beginnning - 
 // now that I have my info and where my info will go, i want to make a list item ('li') for each clinic 
 // I do this by iterating through the data array to access each element (clinic)   
     clinics.forEach((clinic) => {
-        const li = document.createElement('li'); //every single iteration has its own scope
+        // const li = document.createElement('li'); //every single iteration has its own scope
         // now I need to take this li and put some "stuff" in it
-        li.innerText = `${clinic["attributes"]["name"]} - ${clinic["attributes"]["address"]} - ${clinic["attributes"]["city"]} - ${clinic["attributes"]["zip_code"]} - ${clinic["attributes"]["phone_number"]}`
-        ul.appendChild(li)
+        // 
+        renderClinic(clinic)
     })
         // debugger
+
+    function renderClinic(clinic) {
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <div>
+        $<span class="name">${clinic["attributes"]["name"]}</span>
+        <span class="address">${clinic["attributes"]["address"]}</span>
+        <span class="city">${clinic["attributes"]["city"]}</span>
+        <span class="zip_code">${clinic["attributes"]["zip_code"]}</span>
+        <span class="phone_number">${clinic["attributes"]["phone_number"]}</span>
+        </div>`
+        ul.appendChild(li)
+    }
 }
-
-
 // and then because we wrapped fetch in a function we need to call it down at the bottom
-
 getClinics()
 
