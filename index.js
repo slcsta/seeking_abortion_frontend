@@ -74,8 +74,8 @@ function renderClinic(clinic) {
     <span class="zip_code">${clinic["attributes"]["zip_code"]}</span>
     <span class="phone_number">${clinic["attributes"]["phone_number"]}</span>
     </div>
-    <button class="edit">Edit</button>
-    <button class="delete">Delete</button>
+    <button class="edit" data-id= "${clinic.id}">Edit</button>
+    <button class="delete" data-id= "${clinic.id}">Delete</button>
     `
     ul.appendChild(li)
     form.reset() //reset form to be cleared after something is entered
