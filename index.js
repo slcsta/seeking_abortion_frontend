@@ -61,20 +61,25 @@ function renderClinics(data) {
         renderClinic(clinic)
     })
         // debugger
-
-    function renderClinic(clinic) {
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <div>
-        $<span class="name">${clinic["attributes"]["name"]}</span>
-        <span class="address">${clinic["attributes"]["address"]}</span>
-        <span class="city">${clinic["attributes"]["city"]}</span>
-        <span class="zip_code">${clinic["attributes"]["zip_code"]}</span>
-        <span class="phone_number">${clinic["attributes"]["phone_number"]}</span>
-        </div>`
-        ul.appendChild(li)
-    }
 }
 // and then because we wrapped fetch in a function we need to call it down at the bottom
+
+function renderClinic(clinic) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+    <div>
+    <span class="name">${clinic["attributes"]["name"]}</span>
+    <span class="address">${clinic["attributes"]["address"]}</span>
+    <span class="city">${clinic["attributes"]["city"]}</span>
+    <span class="zip_code">${clinic["attributes"]["zip_code"]}</span>
+    <span class="phone_number">${clinic["attributes"]["phone_number"]}</span>
+    </div>
+    <button class="edit">Edit</button>
+    <button class="delete">Delete</button>
+    `
+    ul.appendChild(li)
+    form.reset() //reset form to be cleared after something is entered
+}
+
 getClinics()
 
