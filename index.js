@@ -86,7 +86,14 @@ function renderClinic(clinic) {
 function handleClick(event){
     if(event.target.innerText === "Delete") {
         event.target.parentElement.remove()
-        
+        const id = e.target.dataset.id
+        const configObject = {
+            method: 'DELETE', //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
+        }
+        fetch('http://localhost:3000/clinics' + `/${id}`, configObject)
+        .then(response => response.json())
+        .then(json => {debugger})
+
     }
 
     else if(event.target.innerText === "Edit") {
