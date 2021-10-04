@@ -101,11 +101,16 @@ function handleClick(event){
         // change info on backend in db
         // change info on the frontend (the DOM)
         createEditFields(event.target)
-
     } else if(event.target.innerText === "Save"){
-
+        event.target.innerText = "Edit"
     }
 }
-
+function createEditFields(editBtn){
+    const div = editBtn.previousElementSibling;
+    div.innerHTML = 
+    `input type=`
+    
+    debugger
+}
 getClinics()
 
