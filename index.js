@@ -80,38 +80,37 @@ function renderClinics(data) {
 //     <button class="edit" data-id= "${clinic.id}">Edit</button>
 //     <button class="delete" data-id= "${clinic.id}">Delete</button>
 //     `
-    ul.appendChild(li)
-    form.reset() //reset form to be cleared after something is entered
+   // ul.appendChild(li)
+    //form.reset() //reset form to be cleared after something is entered
     // going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
-    li.addEventListener('click', handleClick)
+    //li.addEventListener('click', handleClick)
 }
 
-function handleClick(event){
-    if(event.target.innerText === "Delete") {
-        const id = event.target.dataset.id
-        event.target.parentElement.remove()
-        const configObject = {
-            method: 'DELETE' //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
-        }
-        fetch('http://localhost:3000/clinics' + `/${id}`, configObject)
-        .then(response => response.json())
-        .then(json => alert(json.message))
+// function handleClick(event){
+//     if(event.target.innerText === "Delete") {
+//         const id = event.target.dataset.id
+//         event.target.parentElement.remove()
+//         const configObject = {
+//             method: 'DELETE' //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
+//         }
+//         fetch('http://localhost:3000/clinics' + `/${id}`, configObject)
+//         .then(response => response.json())
+//         .then(json => alert(json.message))
 
-    } else if(event.target.innerText === "Edit") {
-        event.target.innerText = "Save"
-        // change inner text of button to save
-        // have an edit form appear with values filled out
-        // change info on backend in db
-        // change info on the frontend (the DOM)
-        createEditFields(event.target)
-    } else if(event.target.innerText === "Save"){
-        event.target.innerText = "Edit"
-    }
-}
+//     } else if(event.target.innerText === "Edit") {
+//         event.target.innerText = "Save"
+//         // change inner text of button to save
+//         // have an edit form appear with values filled out
+//         // change info on backend in db
+//         // change info on the frontend (the DOM)
+//         createEditFields(event.target)
+//     } else if(event.target.innerText === "Save"){
+//         event.target.innerText = "Edit"
+//     }
+// }
 function createEditFields(editBtn){
     const div = editBtn.previousElementSibling;
     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
-    debugger
 }
 getClinics()
 
