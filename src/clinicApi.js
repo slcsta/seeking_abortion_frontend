@@ -12,5 +12,6 @@ class clinicApi {
             const c = new Clinic({id:clinic.id, ...clinic.attributes})
             c.renderClinic()
             })
-        }
+        })
+    }
 }

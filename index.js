@@ -5,6 +5,7 @@
 // add an eventListener here to our form - we will listen for submit because we want our form to create something
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
 const port = 'http://localhost:3000'
+const clinicApi = new ClinicApi(port)
 const ul = document.getElementById('clinic-list');
 const form = document.getElementById('clinic-form')
 const nameInput = document.getElementById('clinic-name');
@@ -12,6 +13,7 @@ const addressInput = document.getElementById('clinic-address');
 const cityInput = document.getElementById('clinic-city');
 const zip_codeInput = document.getElementById('clinic-zip_code');
 const phone_numberInput = document.getElementById('clinic-phone_number');
+const baseURL = 'http://localhost:3000/clinics'
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event){
@@ -49,22 +51,22 @@ function handleSubmit(event){
 //     .then(data => renderClinics(data))
 // }
 
-function renderClinics(data) {
-    const clinics = data["data"];
-  // look above - variable defined at beginnning - 
-// now that I have my info and where my info will go, i want to make a list item ('li') for each clinic 
-// I do this by iterating through the data array to access each element (clinic)   
-    clinics.forEach((clinic) => {
-        const c = new Clinic({id:clinic.id, ...clinic.attributes})
-        c.renderClinic()
+// function renderClinics(data) {
+//     const clinics = data["data"];
+//   // look above - variable defined at beginnning - 
+// // now that I have my info and where my info will go, i want to make a list item ('li') for each clinic 
+// // I do this by iterating through the data array to access each element (clinic)   
+//     clinics.forEach((clinic) => {
+//         const c = new Clinic({id:clinic.id, ...clinic.attributes})
+//         c.renderClinic()
 
         // const li = document.createElement('li'); //every single iteration has its own scope
         // now I need to take this li and put some "stuff" in it
         // 
         //renderClinic(clinic)
-    })
+    //})
         // debugger
-}
+//}
 // and then because we wrapped fetch in a function we need to call it down at the bottom
 
 // function renderClinic(clinic) {
