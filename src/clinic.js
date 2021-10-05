@@ -19,7 +19,7 @@ class Clinic {
         this.id = id  
         //this.state = state
         this.element = document.createElement('li');
-        this.element.addEventListener('click', handleClick)
+        this.element.addEventListener('click', this.handleClick)
         Clinic.all.push(this)
         
         //this.element.dataset['id'] = id;
@@ -34,7 +34,7 @@ class Clinic {
         <span class="address">${this.address}</span>
         <span class="city">${this.city}</span>
         <span class="zip_code">${this.zip_code}</span>
-        <span class="phone_number">${thisphone_number}</span>
+        <span class="phone_number">${this.phone_number}</span>
         </div>
         <button class="edit" data-id= "${this.id}">Edit</button>
         <button class="delete" data-id= "${this.id}">Delete</button>
@@ -49,7 +49,8 @@ class Clinic {
         //li.addEventListener('click', handleClick)
     }
 
-    handleClick(event){
+// make this an arrow function because of key word 'this' 
+    handleClick = (event) => {
     if(event.target.innerText === "Delete") {
         const id = event.target.dataset.id
         event.target.parentElement.remove()
@@ -72,5 +73,4 @@ class Clinic {
     }
 }
 
-    
 }

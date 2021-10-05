@@ -4,25 +4,25 @@
 // when info gets sent over the internet it gets turned into a string so we have to jsonify again
 // add an eventListener here to our form - we will listen for submit because we want our form to create something
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
-const form = document.getElementById('clinic-form')
+const port = 'http://localhost:3000'
 const ul = document.getElementById('clinic-list');
+const form = document.getElementById('clinic-form')
 const nameInput = document.getElementById('clinic-name');
 const addressInput = document.getElementById('clinic-address');
 const cityInput = document.getElementById('clinic-city');
 const zip_codeInput = document.getElementById('clinic-zip_code');
 const phone_numberInput = document.getElementById('clinic-phone_number');
-
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event){
-    const clinicInfo = {   // creating an object here of clinic information containing what we want sent over internet to the database
-        // how do i send these attributes through the internet?
-        name: nameInput.value,
-        address: addressInput.value,
-        city: cityInput.value,
-        zip_code: zip_codeInput.value,
-        phone_number: phone_numberInput.value
-    }
+    // const clinicInfo = {   // creating an object here of clinic information containing what we want sent over internet to the database
+    //     // how do i send these attributes through the internet?
+    //     name: nameInput.value,
+    //     address: addressInput.value,
+    //     city: cityInput.value,
+    //     zip_code: zip_codeInput.value,
+    //     phone_number: phone_numberInput.value
+    // }
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
     event.preventDefault();
@@ -43,11 +43,11 @@ function handleSubmit(event){
     .then(json => renderItem(json["data"]))
 }
 
-function getClinics(){
-    fetch('http://localhost:3000/clinics')
-    .then(response => response.json())
-    .then(data => renderClinics(data))
-}
+// function getClinics(){
+//     fetch('http://localhost:3000/clinics')
+//     .then(response => response.json())
+//     .then(data => renderClinics(data))
+// }
 
 function renderClinics(data) {
     const clinics = data["data"];
@@ -84,7 +84,7 @@ function renderClinics(data) {
     //form.reset() //reset form to be cleared after something is entered
     // going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
     //li.addEventListener('click', handleClick)
-}
+//}
 
 // function handleClick(event){
 //     if(event.target.innerText === "Delete") {
