@@ -6,7 +6,7 @@
 class Clinic {
     // making class variables
     static all = [];
-    static container = document.getElementById('item-list');
+    static container = document.getElementById('clinic-list');
 
 
     constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
@@ -14,12 +14,13 @@ class Clinic {
         this.address = address 
         this.city = city
         this.zip_code = zip_code
-        //this.state_id = state_id
+        this.state_id = state_id
         this.phone_number = phone_number
         this.id = id  
         //this.state = state
         this.element = document.createElement('li');
-        all.push(this)
+        this.element.addEventListener('click', handleClick)
+        Clinic.all.push(this)
         
         //this.element.dataset['id'] = id;
         //this.element.id = `clinic-${id}`;

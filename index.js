@@ -55,10 +55,13 @@ function renderClinics(data) {
 // now that I have my info and where my info will go, i want to make a list item ('li') for each clinic 
 // I do this by iterating through the data array to access each element (clinic)   
     clinics.forEach((clinic) => {
+        const c = new Clinic({id:clinic.id, ...clinic.attributes})
+        c.renderClinic()
+
         // const li = document.createElement('li'); //every single iteration has its own scope
         // now I need to take this li and put some "stuff" in it
         // 
-        renderClinic(clinic)
+        //renderClinic(clinic)
     })
         // debugger
 }
