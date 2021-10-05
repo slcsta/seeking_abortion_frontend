@@ -4,7 +4,10 @@
 // Attach any event listeners particular to each item.
 
 class Clinic {
+    // making class variables
     static all = [];
+    static container = document.getElementById('item-list');
+
 
     constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
         this.name = name 
@@ -35,9 +38,15 @@ class Clinic {
         <button class="edit" data-id= "${this.id}">Edit</button>
         <button class="delete" data-id= "${this.id}">Delete</button>
         `
-        ul.appendChild(li)
-        form.reset() //reset form to be cleared after something is entered
-        // going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
-        li.addEventListener('click', handleClick)
+        
+        return this.element
+    }
+
+    renderClinic(){
+        Clinic.container.appendChild(this.render())
+        //form.reset() //reset form to be cleared after something is entered
+        //going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
+        //li.addEventListener('click', handleClick)
+
     }
 }

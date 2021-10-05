@@ -64,19 +64,19 @@ function renderClinics(data) {
 }
 // and then because we wrapped fetch in a function we need to call it down at the bottom
 
-function renderClinic(clinic) {
-    const li = document.createElement('li');
-    li.innerHTML = `
-    <div>
-    <span class="name">${clinic["attributes"]["name"]}</span>
-    <span class="address">${clinic["attributes"]["address"]}</span>
-    <span class="city">${clinic["attributes"]["city"]}</span>
-    <span class="zip_code">${clinic["attributes"]["zip_code"]}</span>
-    <span class="phone_number">${clinic["attributes"]["phone_number"]}</span>
-    </div>
-    <button class="edit" data-id= "${clinic.id}">Edit</button>
-    <button class="delete" data-id= "${clinic.id}">Delete</button>
-    `
+// function renderClinic(clinic) {
+//     const li = document.createElement('li');
+//     li.innerHTML = `
+//     <div>
+//     <span class="name">${clinic["attributes"]["name"]}</span>
+//     <span class="address">${clinic["attributes"]["address"]}</span>
+//     <span class="city">${clinic["attributes"]["city"]}</span>
+//     <span class="zip_code">${clinic["attributes"]["zip_code"]}</span>
+//     <span class="phone_number">${clinic["attributes"]["phone_number"]}</span>
+//     </div>
+//     <button class="edit" data-id= "${clinic.id}">Edit</button>
+//     <button class="delete" data-id= "${clinic.id}">Delete</button>
+//     `
     ul.appendChild(li)
     form.reset() //reset form to be cleared after something is entered
     // going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
