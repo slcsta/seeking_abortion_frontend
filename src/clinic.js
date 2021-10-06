@@ -8,7 +8,6 @@ class Clinic {
     static all = [];
     static container = document.getElementById('clinic-list');
 
-
     constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
         this.name = name 
         this.address = address 
@@ -51,11 +50,11 @@ class Clinic {
 
 // make this an arrow function because of key word 'this' 
     handleClick = (event) => {
-    if(event.target.innerText === "Delete") {
-        clinicApi.deleteClinic(event)
+        if(event.target.innerText === "Delete") {
+            clinicApi.deleteClinic(event)
         
-    } else if(event.target.innerText === "Edit") {
-        event.target.innerText = "Save"
+        } else if(event.target.innerText === "Edit") {
+            event.target.innerText = "Save"
         // change inner text of button to save
         // have an edit form appear with values filled out
         // change info on backend in db
@@ -63,12 +62,12 @@ class Clinic {
         // this is now an instance function inside a class
         // how do i call it now that it's in the class?
         // add this
-        this.createEditFields(event.target)
-    } else if(event.target.innerText === "Save"){
-        event.target.innerText = "Edit"
-        this.saveUpdatedItem(event.target)
+            this.createEditFields(event.target)
+        } else if(event.target.innerText === "Save"){
+            event.target.innerText = "Edit"
+            this.saveUpdatedItem(event.target)
+        }
     }
-}
 
     createEditFields(){
         // query selector will always give me the first element of what we are selecting
@@ -77,13 +76,11 @@ class Clinic {
         const div = this.element.queryselector('div');
             for(const element of div.children){
                 let inputValue = element.innerText;
-
             }
-//     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
-}
+     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
+    }
 
     saveUpdatedClinic(){
 
     }
-
 }

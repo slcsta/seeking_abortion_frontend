@@ -31,21 +31,26 @@ class ClinicApi {
     // b/c this is a more complicated fetch where we are sending params
     // i want to add a second arg that is an object containing the params that i want to send
     // i can do this by creating a variable for that object that holds those params
-    const configObject = {
-        method: 'POST', //tell what kind of request this is
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify(clinicInfo)       // need to stringify this before sending it
+        const configObject = {
+            method: 'POST', //tell what kind of request this is
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(clinicInfo)       // need to stringify this before sending it
+        }
+        fetch(this.baseURL, configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
+        .then(response => response.json())
+        .then(json => {
+            const c = new Clinic({id:json.data.id, ...json.data.attributes})
+            c.renderClinic()
+        })
     }
-    fetch(this.baseURL, configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
-    .then(response => response.json())
-    .then(json => {
-        const c = new Clinic({id:json.data.id, ...json.data.attributes})
-        c.renderClinic()
-    })
-    }
+
+    // fetch request for edit to add later
+    // updateClinic(clinic){
+
+    // }
 
     deleteClinic(event){
         const id = event.target.dataset.id
