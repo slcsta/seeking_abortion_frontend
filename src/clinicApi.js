@@ -21,7 +21,7 @@ class ClinicApi {
             address: addressInput.value,
             city: cityInput.value,
             zip_code: zip_codeInput.value,
-            phone_number: phone_numberInput.value
+            phone_number: phone_numberInput.value,
             state_idInput: dropDown.value
     }
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
