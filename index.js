@@ -7,7 +7,8 @@
 const port = 'http://localhost:3000'
 const clinicApi = new ClinicApi(port)
 const ul = document.getElementById('clinic-list');
-const form = document.getElementById('clinic-form')
+const form = document.getElementById('clinic-form');
+const dropDown = document.getElementById('state-dropdown');
 const nameInput = document.getElementById('clinic-name');
 const addressInput = document.getElementById('clinic-address');
 const cityInput = document.getElementById('clinic-city');
@@ -28,7 +29,7 @@ function handleSubmit(event){
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
     event.preventDefault();
-    clinicApi.createItems();
+    clinicApi.createClinics();
     event.target.reset()
     // fetch request can take in two args
     // b/c this is a more complicated fetch where we are sending params

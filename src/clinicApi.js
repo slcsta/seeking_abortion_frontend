@@ -16,13 +16,12 @@ class ClinicApi {
     }
 
     createClinics(){
-
         const clinicInfo = {   
-        name: nameInput.value,
-        address: addressInput.value,
-        city: cityInput.value,
-        zip_code: zip_codeInput.value,
-        phone_number: phone_numberInput.value
+            name: nameInput.value,
+            address: addressInput.value,
+            city: cityInput.value,
+            zip_code: zip_codeInput.value,
+            phone_number: phone_numberInput.value
     }
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed

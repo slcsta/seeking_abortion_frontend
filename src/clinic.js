@@ -5,7 +5,7 @@
 
 class Clinic {
     // making class variables
-    static all = [];
+    static all = []; 
     static container = document.getElementById('clinic-list');
 
     constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
