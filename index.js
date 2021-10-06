@@ -114,5 +114,5 @@ function createEditFields(editBtn){
     const div = editBtn.previousElementSibling;
     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
 }
-getClinics()
+clinicApi.getClinics()
 
