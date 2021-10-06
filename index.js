@@ -29,6 +29,7 @@ function handleSubmit(event){
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
     event.preventDefault();
     clinicApi.createItems();
+    event.target.reset()
     // fetch request can take in two args
     // b/c this is a more complicated fetch where we are sending params
     // i want to add a second arg that is an object containing the params that i want to send
@@ -111,9 +112,9 @@ function handleSubmit(event){
 //         event.target.innerText = "Edit"
 //     }
 // }
-function createEditFields(editBtn){
-    const div = editBtn.previousElementSibling;
-    // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
-}
+// function createEditFields(editBtn){
+//     const div = editBtn.previousElementSibling;
+//     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
+// }
 clinicApi.getClinics()
 
