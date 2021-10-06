@@ -42,8 +42,9 @@ class ClinicApi {
     fetch(this.baseURL, configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
     .then(response => response.json())
     .then(json => {
-        const c = new Clinic
-        //(json["data"]))
+        const c = new Clinic({id:clinic.id, ...clinic.attributes})
+        c.renderClinic()
+    })
 }
 
 }
