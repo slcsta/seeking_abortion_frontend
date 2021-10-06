@@ -45,19 +45,18 @@ class ClinicApi {
         const c = new Clinic({id:json.data.id, ...json.data.attributes})
         c.renderClinic()
     })
-}
+    }
 
-    deleteItem(event){
+    deleteClinic(event){
         const id = event.target.dataset.id
         event.target.parentElement.remove()
         const configObject = {
-            method: 'DELETE' //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
+            method: 'DELETE'   
         }
         fetch('baseURL' + `/${id}`, configObject)
         .then(response => response.json())
         .then(json => alert(json.message))
     }
-
 }
 
-}
+
