@@ -52,10 +52,11 @@ class Clinic {
 // make this an arrow function because of key word 'this' 
     handleClick = (event) => {
     if(event.target.innerText === "Delete") {
-        const id = event.target.dataset.id
-        event.target.parentElement.remove()
-        const configObject = {
-            method: 'DELETE' //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
+        clinicApi.deleteClinic(event)
+        // const id = event.target.dataset.id
+        // event.target.parentElement.remove()
+        // const configObject = {
+        //     method: 'DELETE' //tell what kind of request this is - don't need headers b/c i'm not adding anything to database - don't need body b/c I'm not sending anything back to frontend   
         }
         fetch('http://localhost:3000/clinics' + `/${id}`, configObject)
         .then(response => response.json())
@@ -73,7 +74,7 @@ class Clinic {
         this.createEditFields(event.target)
     } else if(event.target.innerText === "Save"){
         event.target.innerText = "Edit"
-        saveUpdatedItem(event.target)
+        this.saveUpdatedItem(event.target)
     }
 }
 
@@ -84,9 +85,13 @@ class Clinic {
         const div = this.element.queryselector('div');
             for(const element of div.children){
                 let inputValue = element.innerText;
-                
+
             }
 //     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
 }
+
+    saveUpdatedClinic(){
+
+    }
 
 }
