@@ -28,21 +28,22 @@ function handleSubmit(event){
     // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
     // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
     event.preventDefault();
+    clinicApi.createItems();
     // fetch request can take in two args
     // b/c this is a more complicated fetch where we are sending params
     // i want to add a second arg that is an object containing the params that i want to send
     // i can do this by creating a variable for that object that holds those params
-    const configObject = {
-        method: 'POST', //tell what kind of request this is
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify(clinicInfo)       // need to stringify this before sending it
-    }
-    fetch('http://localhost:3000/clinics', configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
-    .then(response => response.json())
-    .then(json => renderItem(json["data"]))
+    // const configObject = {
+    //     method: 'POST', //tell what kind of request this is
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         Accept: "application/json"
+    //     },
+    //     body: JSON.stringify(clinicInfo)       // need to stringify this before sending it
+    // }
+    // fetch('http://localhost:3000/clinics', configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
+    // .then(response => response.json())
+    // .then(json => renderItem(json["data"]))
 }
 
 // function getClinics(){
