@@ -14,6 +14,7 @@ const addressInput = document.getElementById('clinic-address');
 const cityInput = document.getElementById('clinic-city');
 const zip_codeInput = document.getElementById('clinic-zip_code');
 const phone_numberInput = document.getElementById('clinic-phone_number');
+const state_idInput = document.getElementById('state_id')
 const baseURL = 'http://localhost:3000/clinics'
 form.addEventListener('submit', handleSubmit)
 
