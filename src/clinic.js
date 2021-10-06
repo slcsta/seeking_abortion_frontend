@@ -1,7 +1,7 @@
 // Needs to remember all the clinics (remember our objects)
-// Responsible for setting the properties of each item
+// Responsible for setting the properties of each clinic
 // Responsible for the HTML we want to add to the DOM for each item
-// Attach any event listeners particular to each item.
+// Attach any event listeners particular to each clinic
 
 class Clinic {
     // making class variables
@@ -13,9 +13,10 @@ class Clinic {
         this.address = address 
         this.city = city
         this.zip_code = zip_code
-        this.state_id = state_id
+        //this.state_id = state_id
         this.phone_number = phone_number
-        this.id = id  
+        this.id = id
+        this.state_id = state_id  
         //this.state = state
         this.element = document.createElement('li');
         this.element.addEventListener('click', this.handleClick)
