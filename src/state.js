@@ -14,6 +14,14 @@ class State {
         this.id = id
         this.name = name
         
+        State.all.push(this)
+    }
+
+    addDropDown(){
+        const choice = document.createElement('choice')
+        choice.value = this.id
+        choice.innerText = this.name
+        dropDown.append(option)
     }
 
 
