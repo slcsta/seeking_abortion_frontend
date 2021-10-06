@@ -39,10 +39,11 @@ class ClinicApi {
         },
         body: JSON.stringify(clinicInfo)       // need to stringify this before sending it
     }
-    fetch('http://localhost:3000/clinics', configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
+    fetch(this.baseURL, configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
     .then(response => response.json())
-    .then(json => renderItem(json["data"]))
+    .then(json => {
+        const c = new Clinic
+        //(json["data"]))
 }
 
-    }
 }
