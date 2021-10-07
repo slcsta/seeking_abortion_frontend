@@ -58,7 +58,7 @@ class ClinicApi {
         const configObject = {
             method: 'DELETE'   
         }
-        fetch('baseURL' + `/${id}`, configObject)
+        fetch(baseURL + `/${id}`, configObject)
         .then(response => response.json())
         .then(json => alert(json.message))
     }
