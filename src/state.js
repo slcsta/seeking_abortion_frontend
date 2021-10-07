@@ -19,8 +19,8 @@ class State {
 
     addToDropDown(){
         const option = document.createElement('option'); // first creating the option
-        option.value = this.id   // then adding a value to the option so that we pass that value (id) to the backend
-        option.innerText = this.name // adding inner text
+        option.value = this.id;   // then adding a value to the option so that we pass that value (id) to the backend
+        option.innerText = this.name; // adding inner text
         dropDown.appendChild(option) // appending it to the dropdown
 
         // then we need to call this, so go back to stateApi.js and invoke it there
