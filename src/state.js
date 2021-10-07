@@ -8,7 +8,7 @@ class State {
     // create a static container for states
 
     static all = [];
-    static stateContainer = document.getElementById('');
+    static stateContainer = document.getElementById('state-dropdown');
 
     constructor({id, name,}){
         this.id = id
@@ -23,8 +23,4 @@ class State {
         choice.innerText = this.name
         dropDown.append(option)
     }
-
-
 }
-
-// create a static container for

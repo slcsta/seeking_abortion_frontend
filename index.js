@@ -5,7 +5,8 @@
 // add an eventListener here to our form - we will listen for submit because we want our form to create something
 // I do this listening for the submit by creating a function - here we will call it handleSubmit
 const port = 'http://localhost:3000'
-const clinicApi = new ClinicApi(port)
+const stateCall = new StateApi(port);
+const clinicApi = new ClinicApi(port);
 const ul = document.getElementById('clinic-list');
 const form = document.getElementById('clinic-form');
 const dropDown = document.getElementById('state-dropdown');
@@ -119,4 +120,5 @@ function handleSubmit(event){
 //     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
 // }
 clinicApi.getClinics()
+stateCall.getStates()
 

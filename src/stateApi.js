@@ -1,12 +1,13 @@
 class StateApi {
     constructor(port){
-        this.baseURL = `${port}/states`
+        this.port = port 
     }
 
     getStates(){
-        fetch(this.baseURL)
+        fetch(`${this.port}/states`)
         .then(response => response.json())
         .then(json => {
+            debugger
             json["data"].forEach(element => {
                 const s = new State({id: element.id, ...element.attributes})
                 s.addDropDown()
