@@ -17,6 +17,10 @@ class State {
         State.all.push(this)
     }
 
+    // for filtering by state
+    // need an event listener to set state
+    // 
+
     addToDropDown(){
         const option = document.createElement('option'); // first creating the option
         option.value = this.id;   // then adding a value to the option so that we pass that value (id) to the backend

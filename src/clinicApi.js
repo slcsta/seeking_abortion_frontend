@@ -22,14 +22,10 @@ class ClinicApi {
             city: cityInput.value,
             zip_code: zip_codeInput.value,
             phone_number: phone_numberInput.value,
-            state_idInput: dropDown.value
+            state_id: dropDown.value
     }
-    // first thing I want to do here is add prevent default method b/c the form will automatically try to send a post request
-    // we want to prevent the post request from happening b/c the post request refreshes the pg. - we don't want page refreshed
-    //event.preventDefault();
-    // fetch request can take in two args
-    // b/c this is a more complicated fetch where we are sending params
-    // i want to add a second arg that is an object containing the params that i want to send
+    // we want to prevent the post request from happening b/c the post request refreshes the pg.
+    // fetch request can take in two args-second arg that is an object containing the params that i want to send
     // i can do this by creating a variable for that object that holds those params
         const configObject = {
             method: 'POST', //tell what kind of request this is
@@ -42,6 +38,7 @@ class ClinicApi {
         fetch(this.baseURL, configObject)  //creating something new so we want to add a fetch request that will send some info - we are sending params here to create a new item
         .then(response => response.json())
         .then(json => {
+            
             const c = new Clinic({id:json.data.id, ...json.data.attributes})
             c.renderClinic()
         })
@@ -49,7 +46,6 @@ class ClinicApi {
 
     // fetch request for edit to add later
     // updateClinic(clinic){
-
     // }
 
     deleteClinic(event){

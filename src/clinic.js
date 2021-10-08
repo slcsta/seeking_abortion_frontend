@@ -13,7 +13,6 @@ class Clinic {
         this.address = address 
         this.city = city
         this.zip_code = zip_code
-        //this.state_id = state_id
         this.phone_number = phone_number
         this.id = id
         this.state_id = state_id  
@@ -73,7 +72,6 @@ class Clinic {
     createEditFields(){
         // query selector will always give me the first element of what we are selecting
         // previousElementSibling no longer works here b/c edit is now one form as a div
-        // so the whole li is the div ????
         const div = this.element.queryselector('div');
             for(const element of div.children){
                 let inputValue = element.innerText;
