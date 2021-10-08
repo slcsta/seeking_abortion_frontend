@@ -11,12 +11,22 @@ class State {
     static stateContainer = document.getElementById('state-dropdown');
 
     constructor({id, name}){
-        this.id = id
-        this.name = name
+        this.id = id;
+        this.name = name;
         
         State.all.push(this)
+        this.element = document.getElementById("state-dropdown")
     }
 
+    addListener() {
+        this.element.addEventListener('select, this.')
+    }
+    
+    stateFilter = (event) => {
+        let filteredByState
+
+        
+    }
     // for filtering by state
     // need an event listener to set state
     // 
