@@ -14,7 +14,8 @@ class State {
         this.name = name;
         State.all.push(this)  
     }
-
+    
+    //populate the dropdown - this func is invoked in stateApi
     addToFilter() {
         const option = document.createElement('option');
         option.value = this.id;
@@ -22,8 +23,18 @@ class State {
         filterDropdown.appendChild(option)
     }
     
+
     addListener(event) {
-        State.stateContainer.addEventListener('change', (event) => {
+        State.stateContainer.addEventListener('change', this.setState)
+    }
+
+    setState = (event) => {
+        let filteredState
+        State.all.forEach(s => {
+
+            if(s.element === this.element)
+        })
+    }
             debugger
             const result = document.querySelector('.result');
             result.textContent = `${event.target.value}`;
