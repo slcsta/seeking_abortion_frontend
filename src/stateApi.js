@@ -11,7 +11,9 @@ class StateApi {
             json["data"].forEach(element => {
                 //debugger
                 const s = new State({id: element.id, ...element.attributes})
-                s.addToDropDown()
+                s.addToFilter()
+                //s.addToDropDown()
+               
                 // adding second dropdown
             })
         })
