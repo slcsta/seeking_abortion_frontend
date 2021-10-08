@@ -8,7 +8,8 @@ class State {
     // create a static container for states
 
     static all = [];
-    static stateContainer = document.getElementById('state-dropdown');
+    static stateContainer = document.getElementById('stateFilterDropdown');
+    //static stateContainer = document.getElementById('state-dropdown');
 
     constructor({id, name}){
         this.id = id;
@@ -27,11 +28,14 @@ class State {
         for(const s of State.all) {
             if(s.id === parseInt(event.target.value)){
                 filteredByState = s;
-                debugger
-            }
-
+                //debugger
+            } 
         }
+        Clinic.filterByState(filteredByState)    
+    }
 
+    addToFilterDropdown() {
+        
         
     }
     // for filtering by state
