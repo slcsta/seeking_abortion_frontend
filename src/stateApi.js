@@ -12,8 +12,7 @@ class StateApi {
                 //debugger
                 const s = new State({id: element.id, ...element.attributes})
                 s.addToDropDown()
-                s.add
-                s.addListener()
+                // adding second dropdown
             })
         })
     }

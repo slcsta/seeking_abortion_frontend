@@ -6,41 +6,29 @@
 class State {
     // make class variables
     // create a static container for states
-
     static all = [];
-    static stateContainer = document.getElementById('stateFilterDropdown');
-    //static stateContainer = document.getElementById('state-dropdown');
+    static stateContainer = document.getElementById('state-dropdown');
 
     constructor({id, name}){
         this.id = id;
         this.name = name;
-        
         State.all.push(this)
-        this.element = document.getElementById("state-dropdown")
+        
     }
 
     addListener() {
-        this.element.addEventListener('select, this.stateFilter')
+        State.stateContainer.addEventListener('select', this.stateFilterDropdown)
     }
     
-    stateFilter = (event) => {
-        let filteredByState
-        for(const s of State.all) {
-            if(s.id === parseInt(event.target.value)){
-                filteredByState = s;
-                //debugger
-            } 
-        }
-        Clinic.filterByState(filteredByState)    
-    }
+    // stateFilter = (event) => {
+    //         } 
+    //     }
+    //     Clinic.filterByState(filteredByState)    
+    // }
 
-    addToFilterDropdown() {
-        
-        
-    }
-    // for filtering by state
-    // need an event listener to set state
-    // 
+    //addToFilterDropdown() {
+        //dropDown.appendChild(this.)  
+    //}
 
     addToDropDown(){
         const option = document.createElement('option'); // first creating the option
