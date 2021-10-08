@@ -27,6 +27,7 @@ class State {
         for(const s of State.all) {
             if(s.id === parseInt(event.target.value)){
                 filteredByState = s;
+                debugger
             }
 
         }
