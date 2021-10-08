@@ -26,5 +26,15 @@
     border-bottom: 1px solid #ddd;
 }
 
+/* search when it gets clicked or focused */
+#stateInput:focus {outline: 3px solid #ddd}
+
+/* div position content */
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* dropdown content */
 
 
