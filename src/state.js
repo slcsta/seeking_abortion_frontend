@@ -19,11 +19,17 @@ class State {
     }
 
     addListener() {
-        this.element.addEventListener('select, this.')
+        this.element.addEventListener('select, this.stateFilter')
     }
     
     stateFilter = (event) => {
         let filteredByState
+        for(const s of State.all) {
+            if(s.id === parseInt(event.target.value)){
+                filteredByState = s;
+            }
+
+        }
 
         
     }
