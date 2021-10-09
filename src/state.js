@@ -34,13 +34,11 @@ class State {
         let filteredState     
         State.all.forEach(s => {
             if(s.id === event.target.value){
-                debugger
-                s.element.classList
-                 filteredState = s 
+                filteredState = s 
              }else{
     //             s.element.classList "remove that state and put in new state selected"
          }
-    //         Clinic.filteredByState(filteredState) "then we need some other code here to get the clincs that belong to that state we are filtering by"
+    Clinic.filteredByState(filteredState) //"then we need some other code here to get the clincs that belong to that state we are filtering by"
     })
     }
 
