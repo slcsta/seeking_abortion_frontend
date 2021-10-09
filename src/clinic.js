@@ -25,6 +25,8 @@ class Clinic {
         //this.element.id = `clinic-${id}`;
     }
 
+    
+
     render() {
         //const li = document.createElement('li');
         this.element.innerHTML = `

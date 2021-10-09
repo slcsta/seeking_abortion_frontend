@@ -35,12 +35,11 @@ class State {
         State.all.forEach(s => {
             if(s.id === event.target.value){
                 filteredState = s 
-             }else{
-    //             s.element.classList "remove that state and put in new state selected"
-         }
-    Clinic.filteredByState(filteredState) //"then we need some other code here to get the clincs that belong to that state we are filtering by"
-    })
+            }
+         })
+        Clinic.filteredByState(filteredState) //"then we need some other code here to get the clincs that belong to that state we are filtering by"
     }
+    
 
     addToDropdownFilter() {
         const option = document.createElement('option');
