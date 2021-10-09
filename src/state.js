@@ -12,36 +12,44 @@ class State {
     constructor({id, name}){
         this.id = id;
         this.name = name;
-        State.all.push(this)  
+        
+        State.all.push(this)
+         
+    }
+
+    addListener() {
+        State.stateContainer.addEventListener('change', this.setStateFilter)
+        //debugger
     }
     
     //populate the dropdown with state options to filter by state - this is invoked in stateApi
+    
+    
+    // next add eventlistener to 'listen' for a change to the dropdown filter
+    
+
+    // conditional statement needed here to do the filtering
+    setStateFilter = (event) => {
+        debugger
+        let filteredState     
+        State.all.forEach(s => {
+            if(s.id === event.target.value){
+                debugger
+                s.element.classList
+                 filteredState = s 
+             }else{
+    //             s.element.classList "remove that state and put in new state selected"
+         }
+    //         Clinic.filteredByState(filteredState) "then we need some other code here to get the clincs that belong to that state we are filtering by"
+    })
+    }
+
     addToDropdownFilter() {
         const option = document.createElement('option');
         option.value = this.id;
         option.innerText = this.name;
         filterDropdown.appendChild(option)
-        //debugger
-    }
-    
-    // next add eventlistener to 'listen' for a change to the dropdown filter
-    addListener() {
-        option.addEventListener('change', this.setStateFilter)
-    }
-
-    // conditional statement needed here to do the filtering
-    setStateFilter = (event) => {
-        let filteredState     
-        State.all.forEach(s => {
-            if(s.option === this.option){
-                debugger
-    //             s.element.classList "set this state to be what we filter"
-    //             filteredState = s 
-    //         }else{
-    //             s.element.classList "remove that state and put in new state selected"
-         }
-    //         Clinic.filteredByState(filteredState) "then we need some other code here to get the clincs that belong to that state we are filtering by"
-    })
+        
     }
     
     // had to change code for first dropdown - this dropdown no longer working will have to fix after filter
