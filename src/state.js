@@ -26,14 +26,14 @@ class State {
     }
     
     // next add an event listener to 'listen' for a change to the dropdown filter
-    // addListener(event) {
-    //     this.stateContainer.addEventListener('change', this.setState)
-    //     debugger
-    // }
+    addListener() {
+        option.addEventListener('change', this.setStateFilter)
+        debugger
+    }
 
     // conditional statement needed here to do the filtering
 
-    // setStateFilter = (event) => {
+    setStateFilter = (event) => {
     //     let filteredState     
     //     State.all.forEach(s => {
         
