@@ -20,33 +20,27 @@ class State {
         const option = document.createElement('option');
         option.value = this.id;
         option.innerText = this.name;
-        filterDropdown.appendChild(option)
+        filterDropdown.appendChild(option) 
     }
     
 
-    addListener(event) {
-        State.stateContainer.addEventListener('change', this.setState)
-    }
-
-    setState = (event) => {
-        let filteredState
-        State.all.forEach(s => {
-
-            if(s.element === this.element)
-        })
-    }
-            debugger
-            const result = document.querySelector('.result');
-            result.textContent = `${event.target.value}`;
-        });
-    }
-    
-    // addToFilterDropdown() {
-    //     const option = document.createElement('option');
-    //     filterOption.value = this.id;
-    //     filterOption.innerText = this.name;
-    //     filterDropDown.appendChild(option)
+    // addListener(event) {
+    //     this.stateContainer.addEventListener('change', this.setState)
+    //     debugger
     // }
+
+    // for filtering state
+
+    // setStateFilter = (event) => {
+    //     let filteredState
+    //     State.all.forEach(s => {
+        
+    //         if(s.element === this.element)
+            
+    
+        //})
+    //}
+    
 
     // addToDropDown() {
     //     const option = document.createElement('option'); // first creating the option
