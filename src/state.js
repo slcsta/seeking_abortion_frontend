@@ -36,7 +36,7 @@ class State {
     }
     
     addToDropdownFilter() {
-            filterDropdown.appendChild(option)
+        State.stateContainer.appendChild(this.estStateOptions)
             
     }
     
@@ -51,7 +51,7 @@ class State {
     // }
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns
-    establishStateOptions(){
+    estStateOptions(){
         const option = document.createElement('option');
         option.value = this.id;
         option.innerText = this.name;
