@@ -25,20 +25,18 @@ class State {
     //populate the dropdown with state options to filter by state - this is invoked in stateApi
     // next add eventlistener to 'listen' for a change to the dropdown filter
     // conditional statement needed here to do the filtering
-    setStateFilter = (event) => {
+    setStateFilter = (event) => {   
         let filteredState     
         State.all.forEach(s => {
-            debugger
-            if(s.id === parseInt(event.target.value)){
-                filteredState = s 
-            }
-         })
+            if(s.element === this.element){
+                filteredState = s
+                debugger
+            }   
         Clinic.filterByState(filteredState) //get the clincs that belong to that state we are filtering by
     }
     
     addToDropdownFilter() {
-        State.stateContainer.appendChild(this.estStateOptions())
-            
+        State.stateContainer.appendChild(this.stateOptions())       
     }
     
     // had to change code for first dropdown - this dropdown no longer working will have to fix after filter
@@ -52,8 +50,8 @@ class State {
     // }
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns
-    estStateOptions(){
-        const option = document.createElement('option');
+    stateOptions = () => {
+        const option = document.createElement(`option`);
         option.value = this.id;
         option.innerText = this.name;
         return option
