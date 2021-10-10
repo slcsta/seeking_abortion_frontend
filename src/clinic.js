@@ -26,11 +26,15 @@ class Clinic {
     }
 
     static filterByState(filteredState){
-        debugger
-        if(filteredState){
-            const filteredClinics = Clinic.all.filter((c) => {
-                return c.state_idInput === filteredState.id
-            })
+        if(filteredState) {
+            for(const c of Clinic.all){
+                if(c.state_id === parseInt(filteredState.id)){
+                    debugger
+                }
+            }
+            // const filteredClinics = Clinic.all.filter((c) => {
+            //     return c.state_id === filteredState.id
+            // })
 
             Clinic.container.innerHTML = "";
             for (const c of filteredClinics) {
