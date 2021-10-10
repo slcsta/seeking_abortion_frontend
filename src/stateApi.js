@@ -11,7 +11,7 @@ class StateApi {
                 let s = new State({id: element.id, ...element.attributes})
                 s.addToDropdownFilter()
                 s.addListener()
-                //s.addToDropDown()
+                s.addToDropDown()
                
                 // adding second dropdown
             })
