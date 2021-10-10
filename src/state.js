@@ -36,11 +36,8 @@ class State {
     }
     
     addToDropdownFilter() {
-        const option = document.createElement('option');
-        option.value = this.id;
-        option.innerText = this.name;
-        filterDropdown.appendChild(option)
-        
+            filterDropdown.appendChild(option)
+            
     }
     
     // had to change code for first dropdown - this dropdown no longer working will have to fix after filter
@@ -53,5 +50,11 @@ class State {
         // then we need to call this, so go back to stateApi.js and invoke it there
     // }
 
-    
+    // need state options function that gets states and puts them in variable to be used for both dropdowns
+    establishStateOptions(){
+        const option = document.createElement('option');
+        option.value = this.id;
+        option.innerText = this.name;
+        filterDropdown.appendChild(option)
+    }
 }
