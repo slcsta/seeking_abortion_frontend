@@ -28,15 +28,15 @@ class State {
     setStateFilter = (event) => {
         let filteredState     
         State.all.forEach(s => {
-            if(s.id === event.target.value){
+            if(s.id === parseInt(event.target.value)){
                 filteredState = s 
             }
          })
-        Clinic.filteredByState(filteredState) //get the clincs that belong to that state we are filtering by
+        Clinic.filterByState(filteredState) //get the clincs that belong to that state we are filtering by
     }
     
     addToDropdownFilter() {
-        State.stateContainer.appendChild(this.estStateOptions)
+        State.stateContainer.appendChild(this.estStateOptions())
             
     }
     
@@ -55,6 +55,6 @@ class State {
         const option = document.createElement('option');
         option.value = this.id;
         option.innerText = this.name;
-        filterDropdown.appendChild(option)
+        return option
     }
 }
