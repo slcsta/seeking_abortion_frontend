@@ -25,7 +25,15 @@ class Clinic {
         //this.element.id = `clinic-${id}`;
     }
 
-    
+    static filterByState(filteredState){
+        if(filteredState){
+            const filteredClinics = Clinic.all.filter((c) => {
+                return c.stateId === parseInt(filterdState.id)
+            })
+            debugger
+        }else{}
+    }
+        
 
     render() {
         //const li = document.createElement('li');

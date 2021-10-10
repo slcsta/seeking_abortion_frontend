@@ -23,24 +23,18 @@ class State {
     }
     
     //populate the dropdown with state options to filter by state - this is invoked in stateApi
-    
-    
     // next add eventlistener to 'listen' for a change to the dropdown filter
-    
-
     // conditional statement needed here to do the filtering
     setStateFilter = (event) => {
-        debugger
         let filteredState     
         State.all.forEach(s => {
             if(s.id === event.target.value){
                 filteredState = s 
             }
          })
-        Clinic.filteredByState(filteredState) //"then we need some other code here to get the clincs that belong to that state we are filtering by"
+        Clinic.filteredByState(filteredState) //get the clincs that belong to that state we are filtering by
     }
     
-
     addToDropdownFilter() {
         const option = document.createElement('option');
         option.value = this.id;
@@ -58,4 +52,6 @@ class State {
 
         // then we need to call this, so go back to stateApi.js and invoke it there
     // }
+
+    
 }
