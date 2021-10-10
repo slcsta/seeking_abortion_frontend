@@ -13,13 +13,11 @@ class State {
         this.id = id;
         this.name = name;
         
-        State.all.push(this)
-         
+        State.all.push(this)   
     }
 
     addListener() {
         State.stateContainer.addEventListener('change', this.setStateFilter)
-        //debugger
     }
     
     //populate the dropdown with state options to filter by state - this is invoked in stateApi
@@ -28,12 +26,12 @@ class State {
     setStateFilter = (event) => {   
         let filteredState     
         State.all.forEach(s => {
-            if(s.element === this.element){
+            if(s.id === this.id){
                 filteredState = s
-                debugger
             }   
-        Clinic.filterByState(filteredState) //get the clincs that belong to that state we are filtering by
+        //get the clincs that belong to that state we are filtering by
         })
+        Clinic.filterByState(filteredState) 
     }
     
     addToDropdownFilter() {

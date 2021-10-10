@@ -26,14 +26,16 @@ class Clinic {
     }
 
     static filterByState(filteredState){
+        debugger
         if(filteredState){
-            const filteredClinics = State.all.filter((c) => {
-                return c.state_id === filteredState.id
+            const filteredClinics = Clinic.all.filter((c) => {
+                return c.state_idInput === filteredState.id
             })
 
             Clinic.container.innerHTML = "";
             for (const c of filteredClinics) {
                 c.appendToDom()
+                //debugger
             }
             }else{
                 Clinic.container.innerHTML = "";
@@ -100,5 +102,10 @@ class Clinic {
 
     saveUpdatedClinic(){
 
+    }
+
+    appendToDom() {
+        this.render()
+        Clinic.container.appendChild(this.element)
     }
 }
