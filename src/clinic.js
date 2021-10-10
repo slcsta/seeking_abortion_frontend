@@ -31,30 +31,15 @@ class Clinic {
                 if(c.state_id === parseInt(filteredState.id)){
                     c.element.style.display = ""
                 }else{
-                c.element.style.display = "none"
-                
-    
+                    c.element.style.display = "none"
                 }
             }
-            // const filteredClinics = Clinic.all.filter((c) => {
-            //     return c.state_id === filteredState.id
-            // })
-
-            // Clinic.container.innerHTML = "";
-            // for (const c of filteredClinics) {
-            //     c.appendToDom()
-            //     //debugger
-            // }
-            // }else{
-            //     Clinic.container.innerHTML = "";
-            //     for(const c of Clinic.all) {
-            //         c.appendToDom()
-            //     }
-            }else{
-                for(const c of Clinic.all){}
+        }else{
+            for(const c of Clinic.all){
+                c.element.style.display = ""
             }
         }
-
+    }
 
     render() {
         //const li = document.createElement('li');
@@ -112,10 +97,5 @@ class Clinic {
 
     saveUpdatedClinic(){
 
-    }
-
-    appendToDom() {
-        this.render()
-        Clinic.container.appendChild(this.element)
     }
 }

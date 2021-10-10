@@ -38,15 +38,15 @@ class State {
         State.stateContainer.appendChild(this.stateOptions())       
     }
     
-    // had to change code for first dropdown - this dropdown no longer working will have to fix after filter
-    // addToDropDown() {
-    //     const option = document.createElement('option'); // first creating the option
-    //     option.value = this.id;   // then adding a value to the option so that we pass that value (id) to the backend
-    //     option.innerText = this.name; // adding inner text
-    //     dropDown.appendChild(option) // appending it to the dropdown
+    
+    addToDropDown() {
+        const option = document.createElement('option'); // first creating the option
+        option.value = this.id;   // then adding a value to the option so that we pass that value (id) to the backend
+        option.innerText = this.name; // adding inner text
+        dropDown.appendChild(option) // appending it to the dropdown
 
         // then we need to call this, so go back to stateApi.js and invoke it there
-    // }
+    }
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns
     stateOptions = () => {
