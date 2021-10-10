@@ -28,9 +28,8 @@ class Clinic {
     static filterByState(filteredState){
         if(filteredState){
             const filteredClinics = Clinic.all.filter((c) => {
-                return c.stateId === parseInt(filterdState.id)
+                return c.stateId === parseInt(filteredState.id)
             })
-            debugger
         }else{}
     }
         

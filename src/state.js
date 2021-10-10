@@ -28,6 +28,7 @@ class State {
     setStateFilter = (event) => {
         let filteredState     
         State.all.forEach(s => {
+            debugger
             if(s.id === parseInt(event.target.value)){
                 filteredState = s 
             }
