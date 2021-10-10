@@ -33,6 +33,7 @@ class State {
                 debugger
             }   
         Clinic.filterByState(filteredState) //get the clincs that belong to that state we are filtering by
+        })
     }
     
     addToDropdownFilter() {
@@ -51,7 +52,7 @@ class State {
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns
     stateOptions = () => {
-        const option = document.createElement(`option`);
+        const option = document.createElement('option');
         option.value = this.id;
         option.innerText = this.name;
         return option

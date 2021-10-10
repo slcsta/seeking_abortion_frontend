@@ -28,8 +28,21 @@ class Clinic {
     static filterByState(filteredState){
         if(filteredState){
             const filteredClinics = State.all.filter((c) => {
-                return c.state_id === filteredClinics.id
+                return c.state_id === filteredState.id
             })
+
+            Clinic.container.innerHTML = "";
+            for (const c of filteredClinics) {
+                c.appendToDom()
+            }
+            }else{
+                Clinic.container.innerHTML = "";
+                for(const c of Clinic.all) {
+                    c.appendToDom()
+                }
+            }
+        }
+
 
     render() {
         //const li = document.createElement('li');

@@ -8,8 +8,7 @@ class StateApi {
         .then(response => response.json())
         .then(json => {
             json["data"].forEach(element => {
-                //debugger
-                const s = new State({id: element.id, ...element.attributes})
+                let s = new State({id: element.id, ...element.attributes})
                 s.addToDropdownFilter()
                 s.addListener()
                 //s.addToDropDown()
