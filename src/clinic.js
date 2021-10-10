@@ -29,23 +29,29 @@ class Clinic {
         if(filteredState) {
             for(const c of Clinic.all){
                 if(c.state_id === parseInt(filteredState.id)){
-                    debugger
+                    c.element.style.display = ""
+                }else{
+                c.element.style.display = "none"
+                
+    
                 }
             }
             // const filteredClinics = Clinic.all.filter((c) => {
             //     return c.state_id === filteredState.id
             // })
 
-            Clinic.container.innerHTML = "";
-            for (const c of filteredClinics) {
-                c.appendToDom()
-                //debugger
-            }
+            // Clinic.container.innerHTML = "";
+            // for (const c of filteredClinics) {
+            //     c.appendToDom()
+            //     //debugger
+            // }
+            // }else{
+            //     Clinic.container.innerHTML = "";
+            //     for(const c of Clinic.all) {
+            //         c.appendToDom()
+            //     }
             }else{
-                Clinic.container.innerHTML = "";
-                for(const c of Clinic.all) {
-                    c.appendToDom()
-                }
+                for(const c of Clinic.all){}
             }
         }
 
