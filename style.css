@@ -11,12 +11,18 @@
 
 /* dropdown colore */
 .select-selected {
-    background-color: #aa045f;
+    background-color: lavender;
 }
 
 /* style arrow inside select element */
-
-.droptn:hover, .dropbtn:focus {
-    background-color: #c79daf;
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid trnasparent;
+  border-color: #fff transparent transparent transparent;
 }
 
