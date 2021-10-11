@@ -16,11 +16,10 @@ class Clinic {
         this.phone_number = phone_number
         this.id = id
         this.state_id = state_id  
-        //this.state = state
+        //this.state = state 
         this.element = document.createElement('li');
         this.element.addEventListener('click', this.handleClick)
-        Clinic.all.push(this)
-        
+        Clinic.all.push(this)        
         //this.element.dataset['id'] = id;
         //this.element.id = `clinic-${id}`;
     }

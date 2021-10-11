@@ -27,6 +27,7 @@ class State {
         let filteredState     
         State.all.forEach(s => {
             if(s.id === this.id){
+                //debugger
                 filteredState = s
             }   
         //get the clincs that belong to that state we are filtering by
@@ -39,16 +40,12 @@ class State {
         // option.value = this.id;   // then adding a value to the option so that we pass that value (id) to the backend
         // option.innerText = this.name; // adding inner text
         dropDown.appendChild(this.stateOptions()) // appending it to the dropdown
-
         // then we need to call this, so go back to stateApi.js and invoke it there
     }
     
     addToDropdownFilter() {
         State.stateContainer.appendChild(this.stateOptions())       
     }
-    
-    
-   
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns
     stateOptions = () => {
