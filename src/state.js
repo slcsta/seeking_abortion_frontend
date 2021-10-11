@@ -12,27 +12,25 @@ class State {
     constructor({id, name}){
         this.id = id;
         this.name = name;
-        
         State.all.push(this)   
     }
 
     addListener() {
-        State.stateContainer.addEventListener('change', this.setStateFilter)
+        State.stateContainer.addEventListener('change', this.stateFilter)
+        //debugger
     }
     
     //populate the dropdown with state options to filter by state - this is invoked in stateApi
     // next add eventlistener to 'listen' for a change to the dropdown filter
     // conditional statement needed here to do the filtering
-    setStateFilter = (event) => {   
+    stateFilter = (e) => {   
         let filteredState    // declaring it so i have access to it outside of my scope inside iteration 
-        State.all.forEach(s => {
-            if(s.id === this.id){ //equal to what is clicked on
-                //debugger
+        for(const s of State.all) {
+            if(s.id === e.target.value) { //equal to what is clicked on
                 filteredState = s // first thing i want filteredState to equal that state filter if all the conditions above are
-
             }   
         //get the clincs that belong to that state we are filtering by
-        })
+        }
         Clinic.filterByState(filteredState) 
     }
 

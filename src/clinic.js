@@ -7,7 +7,6 @@ class Clinic {
     // making class variables
     static all = []; 
     static container = document.getElementById('clinic-list');
-
     constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
         this.name = name 
         this.address = address 
@@ -20,8 +19,8 @@ class Clinic {
         this.element = document.createElement('li');
         this.element.addEventListener('click', this.handleClick)
         Clinic.all.push(this)        
-        //this.element.dataset['id'] = id;
-        //this.element.id = `clinic-${id}`;
+        this.element.dataset['id'] = id;
+        this.element.id = `clinic-${id}`;
     }
 
     static filterByState(filteredState){
