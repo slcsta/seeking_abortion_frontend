@@ -9,7 +9,7 @@ class StateApi {
         .then(json => {
             json["data"].forEach(element => {
                 let s = new State({id: element.id, ...element.attributes})
-                s.addToDropDown()
+                s.addToDropdown()
                 s.addToDropdownFilter()
                 s.addListener()
             })

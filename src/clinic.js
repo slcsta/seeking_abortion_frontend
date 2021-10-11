@@ -26,17 +26,32 @@ class Clinic {
 
     static filterByState(filteredState){
         if(filteredState) {
-            for(const c of Clinic.all){
-                if(c.state_id === parseInt(filteredState.id)){
-                    c.element.style.display = ""
-                }else{
-                    c.element.style.display = "none"
-                }
+            const filteredClinics = Clinic.all.filter((c) => {
+                return c.state_id === parseInt(filteredState.id)
+            })
+            // const filteredClinics = Clinic.all.filter((c) => {
+            //     return c.state_id === parseInt(filteredState.id)
+                //debugger
+                
+            //})
+            //for(const c of Clinic.all){
+                //if(c.state_id === parseInt(filteredState.id)){
+                    //c.element.style.display = ""
+                //}else{
+                  //  c.element.style.display = "none"
+                //}
+            //}
+            Clinic.container.innerHTML = "";
+            for(const clinic of filteredClinics) {
+                clinic.renderClinic()
+                //debugger
             }
+            //c.renderClinic()
+            //debugger
         }else{
-            for(const c of Clinic.all){
-                c.element.style.display = ""
-            }
+            Clinic.container.innerHTML ="";
+            for(const clinic of Clinic.all)
+            clinic.renderClinic()
         }
     }
 
@@ -58,6 +73,7 @@ class Clinic {
 
     renderClinic(){
         Clinic.container.appendChild(this.render())
+        // Clinic.container.appendChild(this.render())
         //form.reset() //reset form to be cleared after something is entered
         //going to put event listener on the parent element li instead of on the button child element - b/c it's simpler
         //li.addEventListener('click', handleClick)

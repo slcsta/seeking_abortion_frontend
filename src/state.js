@@ -24,31 +24,28 @@ class State {
     // next add eventlistener to 'listen' for a change to the dropdown filter
     // conditional statement needed here to do the filtering
     setStateFilter = (event) => {   
-        let filteredState     
+        let filteredState    // declaring it so i have access to it outside of my scope inside iteration 
         State.all.forEach(s => {
-            if(s.id === this.id){
+            if(s.id === this.id){ //equal to what is clicked on
                 //debugger
-                filteredState = s
+                filteredState = s // first thing i want filteredState to equal that state filter if all the conditions above are
+
             }   
         //get the clincs that belong to that state we are filtering by
         })
         Clinic.filterByState(filteredState) 
     }
 
-    addToDropDown() {
-        // const option = document.createElement('option'); // first creating the option
-        // option.value = this.id;   // then adding a value to the option so that we pass that value (id) to the backend
-        // option.innerText = this.name; // adding inner text
-        dropDown.appendChild(this.stateOptions()) // appending it to the dropdown
-        // then we need to call this, so go back to stateApi.js and invoke it there
+    addToDropdown() {
+        dropDown.appendChild(this.setOption()) // appending it to the dropdown
     }
     
     addToDropdownFilter() {
-        State.stateContainer.appendChild(this.stateOptions())       
+        State.stateContainer.appendChild(this.setOption())       
     }
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns
-    stateOptions = () => {
+    setOption = () => {
         const option = document.createElement('option');
         option.value = this.id;
         option.innerText = this.name;
