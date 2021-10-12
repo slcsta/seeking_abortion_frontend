@@ -4,8 +4,6 @@
 // attach any event listeners particular to each state
 
 class State {
-    // make class variables
-    // create a static container for states
     static all = [];
     static stateContainer = document.getElementById('state-container');
 
@@ -17,7 +15,6 @@ class State {
 
     addListener() {
         State.stateContainer.addEventListener('change', this.stateFilter)
-        //debugger
     }
     
     //populate the dropdown with state options to filter by state - this is invoked in stateApi

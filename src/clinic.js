@@ -4,7 +4,6 @@
 // Attach any event listeners particular to each clinic
 
 class Clinic {
-    // making class variables
     static all = []; 
     static container = document.getElementById('clinic-list');
     constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
@@ -30,7 +29,7 @@ class Clinic {
             })
             // const filteredClinics = Clinic.all.filter((c) => {
             //     return c.state_id === parseInt(filteredState.id)
-                //debugger
+                
                 
             //})
             //for(const c of Clinic.all){
