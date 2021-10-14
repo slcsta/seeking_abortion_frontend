@@ -2,6 +2,48 @@
 "Custom Select Styles with Pure CSS"
 https://moderncss.dev/custom-select-styles-with-pure-css/ */
 
+.jumbotron{
+  background-image: url(https://i0.wp.com/beyondbelief.online/content2/wp-content/uploads/2019/08/Young-People-Lead-3-1.png?resize=1170%2C779);
+  background-size: contain;
+  background-position: left;
+  background-color: #f3ded4;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.jumbotron h1{
+  margin-left: 170px
+}
+
+.jumbotron p{
+  margin-left: 170px
+}
+
+h4{
+  margin-left: 20px;
+}
+
+div[class=select]{
+  margin-left: 20px;
+}
+
+div[class=form-group]{
+  margin-left: 20px;
+}
+
+label[for=state-dropdown]{
+  margin-left: 20px;
+}
+
+input[type=submit] {
+  margin-left: 20px
+}
+
+input[type=text] {
+  width: 30%; 
+}
+
+
 *,
 *::before,
 *::after {
