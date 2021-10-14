@@ -19,6 +19,10 @@ https://moderncss.dev/custom-select-styles-with-pure-css/ */
   margin-left: 170px
 }
 
+h3{
+  margin-left: 20px;
+}
+
 h4{
   margin-left: 20px;
 }
@@ -31,8 +35,28 @@ div[class=form-group]{
   margin-left: 20px;
 }
 
+label[for=state-container]{
+  margin-left: 20px;
+}
+
 label[for=state-dropdown]{
   margin-left: 20px;
+}
+
+li {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  }
+
+div span{
+  display:block;
+}
+
+div span.name{
+font-weight: bold;
 }
 
 input[type=submit] {
