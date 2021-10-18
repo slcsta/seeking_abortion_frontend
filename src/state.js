@@ -36,7 +36,8 @@ class State {
     }
     
     addToDropdownFilter() {
-        State.stateContainer.appendChild(this.setOption())       
+        State.stateContainer.appendChild(this.setOption()) 
+            
     }
 
     // need state options function that gets states and puts them in variable to be used for both dropdowns

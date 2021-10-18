@@ -6,7 +6,7 @@
 class Clinic {
     static all = []; 
     static container = document.getElementById('clinic-list');
-    constructor({name, address, city, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
+    constructor({name, address, city, zip_code, state_id, state, phone_number, id}){             //good place to use destructuring here
         this.name = name 
         this.address = address 
         this.city = city
@@ -14,12 +14,13 @@ class Clinic {
         this.phone_number = phone_number
         this.id = id
         this.state_id = state_id  
-        //this.state = state 
+        this.state = state.name
         this.element = document.createElement('li');
         this.element.addEventListener('click', this.handleClick)
         Clinic.all.push(this)        
         this.element.dataset['id'] = id;
         this.element.id = `clinic-${id}`;
+       
     }
 
     static filterByState(filteredState){
@@ -59,13 +60,14 @@ class Clinic {
         <div>
         <span class="name">${this.name}</span>
         <span class="address">${this.address}</span>
-        <span class="city">${this.city}</span>
+        <span class="city">${this.city}, ${this.state}</span>
         <span class="zip_code">${this.zip_code}</span>
         <span class="phone_number">${this.phone_number}</span>
         </div>
         <button class="edit" data-id= "${this.id}">Edit</button>
         <button class="delete" data-id= "${this.id}">Delete</button>
         `
+        
         return this.element
     }
 
