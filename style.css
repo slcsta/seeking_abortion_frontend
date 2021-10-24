@@ -1,22 +1,26 @@
 /* most of the styling for my dropdown came from here: 
 "Custom Select Styles with Pure CSS"
 https://moderncss.dev/custom-select-styles-with-pure-css/ */
+body {
+  background-color: rgb(255, 245, 245);
+  /* background-color: #f6dcd6; */
+}
 
 .jumbotron{
   background-image: url(https://i0.wp.com/beyondbelief.online/content2/wp-content/uploads/2019/08/Young-People-Lead-3-1.png?resize=1170%2C779);
   background-size: contain;
   background-position: left;
-  background-color: #f1dcd3;
+  background-color: #f6dcd6;
   background-repeat: no-repeat;
   height: 100%;
 }
 
 .jumbotron h1{
-  margin-left: 170px
+  margin-left: 300px
 }
 
 .jumbotron p{
-  margin-left: 170px
+  margin-left: 300px
 }
 
 h3{

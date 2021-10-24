@@ -67,7 +67,6 @@ class Clinic {
         <button class="edit" data-id= "${this.id}">Edit</button>
         <button class="delete" data-id= "${this.id}">Delete</button>
         `
-        
         return this.element
     }
 

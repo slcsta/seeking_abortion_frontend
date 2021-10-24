@@ -7,10 +7,11 @@ class State {
     static all = [];
     static stateContainer = document.getElementById('state-container');
 
+
     constructor({id, name}){
         this.id = id;
         this.name = name;
-        State.all.push(this)   
+        State.all.push(this)
     }
 
     addListener() {
@@ -22,7 +23,7 @@ class State {
     // conditional statement needed here to do the filtering
     stateFilter = (e) => {   
         let filteredState    // declaring it so i have access to it outside of my scope inside iteration 
-        for(const s of State.all) {
+        for(const s of State.all) { 
             if(s.id === e.target.value) { //equal to what is clicked on
                 filteredState = s // first thing i want filteredState to equal that state filter if all the conditions above are
             }   
@@ -36,7 +37,7 @@ class State {
     }
     
     addToDropdownFilter() {
-        State.stateContainer.appendChild(this.setOption()) 
+        State.stateContainer.appendChild(this.setOption())
             
     }
 
