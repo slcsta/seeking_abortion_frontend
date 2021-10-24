@@ -43,6 +43,18 @@ class ClinicApi {
         })
     }
 
+    updateClinic() {
+        const configObject = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(clinicInfo)
+        }
+        fetch
+    }
+
     // fetch request for edit to add later
     // updateClinic(clinic){
     // }

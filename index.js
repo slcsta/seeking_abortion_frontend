@@ -17,7 +17,7 @@ form.addEventListener('submit', handleSubmit)
 function handleSubmit(event){
     event.preventDefault();
     clinicApi.createClinics();
-    event.target.reset()
+    event.target.reset();
 }
 
 clinicApi.getClinics()

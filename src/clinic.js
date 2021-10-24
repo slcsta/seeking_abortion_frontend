@@ -102,14 +102,23 @@ class Clinic {
     createEditFields(){
         // query selector will always give me the first element of what we are selecting
         // previousElementSibling no longer works here b/c edit is now one form as a div
-        const div = this.element.queryselector('div');
+        const div = this.element.querySelector('div');
+        debugger
             for(const element of div.children){
                 let inputValue = element.innerText;
+                let name = element.classList[0];
             }
      // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
     }
 
     saveUpdatedClinic(){
+        this.name = this.element.querySelector(".edit-name").value;
+        this.address = this.element.querySelector(".edit-address").value;
+        this.city = this.element.querySelector(".edit-city").value;
+        this.zip_code = this.element.querySelector(".edit-zip_code").value;
+        this.phone_number = this.element.querySelector(".edit-phone_number").value;
+
+        ClinicApi.updateItem(this)
 
     }
 }
