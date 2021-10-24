@@ -8,10 +8,11 @@ const dropDown = document.getElementById('state-dropdown');
 const nameInput = document.getElementById('clinic-name');
 const addressInput = document.getElementById('clinic-address');
 const cityInput = document.getElementById('clinic-city');
+const stateInput = document.getElementById('state-dropdown').innerText;
 const zip_codeInput = document.getElementById('clinic-zip_code');
 const phone_numberInput = document.getElementById('clinic-phone_number');
 //const state_idInput = document.getElementById('state_id')
-const baseURL = 'http://localhost:3000/clinics';
+const baseURL = 'http://localhost:3000/clinics'
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event){

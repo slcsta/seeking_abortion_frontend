@@ -6,7 +6,7 @@
 class Clinic {
     static all = []; 
     static container = document.getElementById('clinic-list');
-    constructor({name, address, city, zip_code, state_id, state, phone_number, id}){             //good place to use destructuring here
+    constructor({name, address, city, state, zip_code, state_id, phone_number, id}){             //good place to use destructuring here
         this.name = name 
         this.address = address 
         this.city = city
@@ -64,7 +64,6 @@ class Clinic {
         <span class="zip_code">${this.zip_code}</span>
         <span class="phone_number">${this.phone_number}</span>
         </div>
-        <button class="edit" data-id= "${this.id}">Edit</button>
         <button class="delete" data-id= "${this.id}">Delete</button>
         `
         return this.element
@@ -83,8 +82,8 @@ class Clinic {
         if(event.target.innerText === "Delete") {
             clinicApi.deleteClinic(event)
         
-        } else if(event.target.innerText === "Edit") {
-            event.target.innerText = "Save"
+        // } else if(event.target.innerText === "Edit") {
+        //     event.target.innerText = "Save"
         // change inner text of button to save
         // have an edit form appear with values filled out
         // change info on backend in db
@@ -92,33 +91,10 @@ class Clinic {
         // this is now an instance function inside a class
         // how do i call it now that it's in the class?
         // add this
-            this.createEditFields(event.target)
-        } else if(event.target.innerText === "Save"){
-            event.target.innerText = "Edit"
-            this.saveUpdatedItem(event.target)
+        //     this.createEditFields(event.target)
+        // } else if(event.target.innerText === "Save"){
+        //     event.target.innerText = "Edit"
+        //     this.saveUpdatedItem(event.target)
         }
-    }
-
-    createEditFields(){
-        // query selector will always give me the first element of what we are selecting
-        // previousElementSibling no longer works here b/c edit is now one form as a div
-        const div = this.element.querySelector('div');
-        debugger
-            for(const element of div.children){
-                let inputValue = element.innerText;
-                let name = element.classList[0];
-            }
-     // Good way to do this is to loop over each element of the div so that we have like 1 form and not multiple forms for each attribute
-    }
-
-    saveUpdatedClinic(){
-        this.name = this.element.querySelector(".edit-name").value;
-        this.address = this.element.querySelector(".edit-address").value;
-        this.city = this.element.querySelector(".edit-city").value;
-        this.zip_code = this.element.querySelector(".edit-zip_code").value;
-        this.phone_number = this.element.querySelector(".edit-phone_number").value;
-
-        ClinicApi.updateItem(this)
-
     }
 }
