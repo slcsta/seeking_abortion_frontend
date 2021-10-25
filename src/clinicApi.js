@@ -24,9 +24,7 @@ class ClinicApi {
             phone_number: phone_numberInput.value,
             state_id: dropDown.value
         }
-    // we want to prevent the post request from happening b/c the post request refreshes the pg.
-    // fetch request can take in two args-second arg that is an object containing the params that i want to send
-    // i can do this by creating a variable for that object that holds those params
+    
         const configObject = {
             method: 'POST', //tell what kind of request this is
             headers: {
