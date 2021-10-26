@@ -27,7 +27,6 @@ class Clinic {
             Clinic.container.innerHTML = "";
             for(const clinic of filteredClinics) {
                 clinic.renderClinic()
-                //debugger
             }
             
         }else{

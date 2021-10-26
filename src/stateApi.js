@@ -8,12 +8,24 @@ class StateApi {
         .then(response => response.json())
         .then(json => {
             json["data"].forEach(element => {
-                let s = new State({id: element.id, ...element.attributes})
+                new State({id: element.id, ...element.attributes})
+                State.all.sort((a, b) => {
+                    if (a.name < b.name) {
+                        //debugger
+                        return -1
+                    }
+                    if (a.name > b.name) {
+                        return 1
+                    }
+                    return 0
+                })  
+            })
+            State.all.forEach(s => {
+                s.addListener()
                 s.addToDropdown()
                 s.addToDropdownFilter()
-                s.addListener()
-            })
+        })
+        
         })
     }
-
 }
